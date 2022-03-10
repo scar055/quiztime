@@ -1,0 +1,44 @@
+﻿<Window x:Class="QuizTime.quizAddAnswers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizTime"
+        mc:Ignorable="d"
+        Title="quizAddAnswers" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="quizAnswersGrid" HorizontalAlignment="Left" Height="175" Margin="158,94,0,0" VerticalAlignment="Top" Width="482">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="145*"/>
+                <ColumnDefinition Width="96*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txbAnswerA" HorizontalAlignment="Left" Height="22" Margin="181,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
+            <Label Content="Antwoorden" HorizontalAlignment="Left" Margin="10,-1,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <TextBox x:Name="txbAnswerB" HorizontalAlignment="Left" Height="22" Margin="181,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txbAnswerC" HorizontalAlignment="Left" Height="22" Margin="181,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="txbAnswerD" HorizontalAlignment="Left" Height="23" Margin="181,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="cbAnswerA" HorizontalAlignment="Left" Margin="58.2,28,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.Column="1">
+                <ComboBoxItem Content="fout antwoord"/>
+                <ComboBoxItem Content="goed antwoord"/>
+            </ComboBox>
+            <ComboBox x:Name="cbAnswerB" HorizontalAlignment="Left" Margin="58.2,65,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.Column="1">
+                <ComboBoxItem Content="fout antwoord"/>
+                <ComboBoxItem Content="goed antwoord"/>
+            </ComboBox>
+            <ComboBox x:Name="cbAnswerC" HorizontalAlignment="Left" Margin="58.2,104,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.Column="1">
+                <ComboBoxItem Content="fout antwoord"/>
+                <ComboBoxItem Content="goed antwoord"/>
+            </ComboBox>
+            <ComboBox x:Name="cbAnswerD" HorizontalAlignment="Left" Margin="58.2,143,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Grid.Column="1">
+                <ComboBoxItem Content="fout antwoord"/>
+                <ComboBoxItem Content="goed antwoord"/>
+            </ComboBox>
+            <Label Content="Vul hier antwoord A in:" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+            <Label Content="Vul hier antwoord B in:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+            <Label Content="Vul hier antwoord C in:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+            <Label Content="Vul hier antwoord D in:" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Button x:Name="cancelAnswer" Content="cancel" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="81" Height="33" Click="cancelAnswer_Click"/>
+        <Button x:Name="addAnswer" Content="voeg toe" HorizontalAlignment="Left" Margin="698,377,0,0" VerticalAlignment="Top" Width="86" Height="33" Click="addAnswer_Click"/>
+    </Grid>
+</Window>

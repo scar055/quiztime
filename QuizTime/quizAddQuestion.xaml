@@ -1,0 +1,21 @@
+﻿<Window x:Class="QuizTime.quizAddQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizTime"
+        mc:Ignorable="d"
+        Title="quizAddQuestion" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="quizQuestionsGrid" HorizontalAlignment="Left" Height="303" Margin="122,23,0,0" VerticalAlignment="Top" Width="571">
+            <Label Content="vragen" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <TextBox x:Name="txbQuestion" HorizontalAlignment="Left" Height="22" Margin="181,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+            <Button x:Name="btnQuestionImage" Content="Foto/Plaatje" HorizontalAlignment="Left" Margin="440,92,0,0" VerticalAlignment="Top" Width="84" Height="28" Click="btnQuestionImage_Click"/>
+            <Image x:Name="questionImage" HorizontalAlignment="Left" Height="150" Margin="121,92,0,0" VerticalAlignment="Top" Width="300"/>
+            <Label Content="Vul hier de vraag in:" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Button x:Name="cancelQuestion" Content="cancel" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="81" Height="33" Click="cancelQuestion_Click"/>
+        <Button x:Name="addQuestion" Content="voeg toe" HorizontalAlignment="Left" Margin="698,377,0,0" VerticalAlignment="Top" Width="86" Height="33" Click="addQuiz_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="QuizTime.quizAnswersGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizTime"
+        mc:Ignorable="d"
+        Title="quizAnswersGrid" Height="450" Width="800">
+    <Grid>
+        <TextBlock Height="32" HorizontalAlignment="Left" Margin="10,10,0,378" Name="TextBlockHeading" Text="Antwoorden" FontSize="18"/>
+        <Grid x:Name="gAnswers" HorizontalAlignment="Left" Height="272" Margin="10,85,0,0" VerticalAlignment="Top" Width="774">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgAnswers" AutoGenerateColumns="False" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Disabled" 
+                      Height="272" VerticalAlignment="Top" Width="774" ItemsSource="{Binding Path=LoadDataBinding}"
+                      CanUserResizeRows="False" CanUserAddRows="False" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=answers_id}" Header="nummer" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=answers}" Header="antwoorden" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=right_answer}" Header="goed antwoord" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=answers_date}" Header="datum" Width="150" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit" Click="btnEdit_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="btnDelete_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Label Content="Vraag:" HorizontalAlignment="Left" Margin="159,12,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbQuestion" HorizontalAlignment="Left" Height="23" Margin="231,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_changeQuizName" Content="Verander vraag" HorizontalAlignment="Left" Margin="376,16,0,0" VerticalAlignment="Top" Width="125" Height="23" Click="btn_changeQuestion_Click"/>
+        <Button x:Name="btnChangeImage" Content="plaatje veranderen" HorizontalAlignment="Left" Margin="675,16,0,0" VerticalAlignment="Top" Width="109" Height="23" Click="btnChangeImage_Click"/>
+        <Image x:Name="questionImage" HorizontalAlignment="Left" Height="70" Margin="557,10,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button x:Name="cancel" Content="annuleren" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="98" Height="30" Click="Cancel_Click"/>
+        <Button x:Name="btnAddAnswers" Content="voegtoe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="704,380,0,0" Height="30" Click="btnAddAnswers_Click"/>
+    </Grid>
+</Window>

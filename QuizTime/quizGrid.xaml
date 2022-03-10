@@ -1,0 +1,39 @@
+﻿<Window x:Class="QuizTime.quizGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizTime"
+        mc:Ignorable="d"
+        Title="quizGrid" Height="450" Width="800">
+    <Grid>
+        <TextBlock Height="32" HorizontalAlignment="Left" Margin="10,10,0,378" Name="TextBlockHeading" Text="Quizzen" FontSize="18"/>
+        <Grid x:Name="gQuiz" HorizontalAlignment="Left" Height="363" Margin="10,47,0,0" VerticalAlignment="Top" Width="774">
+            <DataGrid x:Name="dgQuiz" AutoGenerateColumns="False" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Disabled" 
+                      Height="321" VerticalAlignment="Top" Width="774" ItemsSource="{Binding Path=LoadDataBinding}"
+                      CanUserResizeRows="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=quiz_id}" Header="nummer" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=quiz_name}" Header="naam" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=quiz_date}" Header="datum" Width="150" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit" Click="btnEdit_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="75">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="btnDelete_Click"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnAddQuiz" Content="voeg toe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="693,326,0,0" Height="30" Click="btnAddQuiz_Click"/>
+            <Button x:Name="cancel" Content="annuleren" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="98" Height="30" Click="Cancel_Click"/>
+        </Grid>
+    </Grid>
+</Window>

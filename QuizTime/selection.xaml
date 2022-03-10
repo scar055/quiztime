@@ -1,0 +1,35 @@
+﻿<Window x:Class="QuizTime.selection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizTime"
+        mc:Ignorable="d"
+        Title="selection" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgQuiz" AutoGenerateColumns="False" HorizontalAlignment="Left" HorizontalScrollBarVisibility="Disabled" 
+                      Height="291" VerticalAlignment="Top" Width="794" ItemsSource="{Binding Path=LoadDataBinding}"
+                      CanUserResizeRows="False" CanUserAddRows="False" Margin="0,56,-0.4,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=quiz_id}" Header="nummer" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=quiz_name}" Header="naam" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=quiz_date}" Header="datum" Width="*" IsReadOnly="True"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnStart" Content="start" Click="btnStart_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnCheckAnwsers" Content="Check antwoorden" Click="btnCheckAnswers_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnBack" Content="terug" HorizontalAlignment="Left" Margin="38,366,0,0" VerticalAlignment="Top" Width="96" Height="36" Click="btnBack_Click"/>
+    </Grid>
+</Window>
