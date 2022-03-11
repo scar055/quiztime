@@ -97,6 +97,10 @@ namespace QuizTime
                 {
                     if (currentanswers["right_answer"].ToString() == "1")
                     {
+                        lblAnwser1.Background = Brushes.Transparent;
+                        lblAnwser2.Background = Brushes.Transparent;
+                        lblAnwser3.Background = Brushes.Transparent;
+                        lblAnwser4.Background = Brushes.Transparent;
                         switch (i)
                         {
                             case 0:
